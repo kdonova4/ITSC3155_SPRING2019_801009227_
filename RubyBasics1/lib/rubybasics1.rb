@@ -11,5 +11,20 @@ end
 
 # Part III
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if (arr.length == 0)
+    return false
+  end
+  if (arr.length == 1)
+    return false
+  end
+    
+  for i in 0 ... arr.length do
+    for j in 0 ... i 
+    if (arr[j] + arr[i] == n) 
+      return true;
+    end
+    
+    end
+  end
+  return false
 end
