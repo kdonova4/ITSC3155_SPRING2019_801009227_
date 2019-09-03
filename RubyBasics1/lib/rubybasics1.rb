@@ -17,13 +17,18 @@ def sum_to_n? arr, n
   if (arr.length == 1)
     return false
   end
-    
-  for i in 0 ... arr.length do
-    for j in 0 ... i 
-    if (arr[j] + arr[i] == n) 
-      return true;
-    end
-    
+  sorted_arr = arr.sort
+  head =0
+  tail = sorted_arr.length-1
+  
+  while head < tail 
+    current_sum = sorted_arr[head] + sorted_arr[tail]
+    if current_sum == n
+      return true
+    elsif current_sum < n
+      head = head + 1
+    else 
+      tail = tail - 1
     end
   end
   return false
