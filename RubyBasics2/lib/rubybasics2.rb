@@ -2,12 +2,12 @@
 
 # Part I
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 # Part II
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  
 end
 
 # Part III
