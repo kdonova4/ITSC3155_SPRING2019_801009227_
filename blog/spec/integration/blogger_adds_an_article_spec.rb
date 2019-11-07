@@ -11,6 +11,14 @@ feature"Blogger adds an article" do
         expect(page).to have_field("Text")
     end
         
+    scenario "Blogger succesfully creates a  new article" do
+        visit new_article_path
+        expect(page).to have_content("New Article")
+        fill_in "Title", with: "New Capybara article"
+        fill_in "Text", with: "This is a new Capybara article"
+        click_button "Create Article"
+        expect(page).to have_content("New Capybara article")
+        expect(page).to have_content("This is a new Capybara article")
+    end
         
-    
 end
